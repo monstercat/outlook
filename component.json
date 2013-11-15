@@ -1,0 +1,17 @@
+{
+  "name": "outlook",
+  "repo": "monstercat/outlook",
+  "description": "Monstercat outlook",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "outlook.css"
+  ]
+}
