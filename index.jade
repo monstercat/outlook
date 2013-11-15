@@ -2,9 +2,24 @@ doctype 5
 html(lang="en")
   head
     title Monstercat 015 - Outlook
-    script(type='text/javascript').
+    link(rel='stylesheet', href='css/outlook.css')
   body
-    h1 Outlook
-    #container
-      p.
-        Hello there
+    div(id="container", class="container")
+      ul(id="scene", class="scene")
+        li(class="layer", data-depth="0.00")
+          img.stars(src="images/stars.png")
+        li(class="layer", data-depth="0.20")
+          img.aurora(src="images/aurora.png")
+        li(class="layer", data-depth="0.40")
+          img.mountains(src="images/mountains.png")
+        li(class="layer", data-depth="0.60")
+          img.trees(src="images/trees.png")
+        li(class="layer", data-depth="0.80")
+          img.grass(src="images/grass.png")
+        li(class="layer", data-depth="1.00")
+          img.cat(src="images/cat.png")
+
+    script(src="lib/parallax.min.js")
+    script.
+      var scene = document.getElementById('scene');
+      var parallax = new Parallax(scene);

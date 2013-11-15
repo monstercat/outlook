@@ -1,0 +1,68 @@
+body {
+  height: 100%;
+  overflow: hidden;
+  background: #111;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+img {
+  display: block;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.scene {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.grass, .trees, .mountains, .aurora, .stars {
+  width: 150%;
+  position: absolute;
+  left: -25%;
+}
+
+.stars {
+  z-index: -10;
+}
+
+.aurora {
+  top: -100px;
+  z-index: -9;
+}
+
+.mountains {
+  z-index: -8;
+  bottom: -20%;
+}
+
+.trees {
+  z-index: -7;
+  bottom: -20%;
+}
+
+.grass {
+  z-index: -6;
+  bottom: -20%;
+}
+
+.cat {
+  position: absolute;
+  width: 30%;
+  right: 10%;
+  bottom:-20%;
+  z-index:-5;
+}
