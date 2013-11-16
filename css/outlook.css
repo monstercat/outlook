@@ -121,6 +121,11 @@ img {
   animation-name: scrollbg;
 }
 
+.paused * {
+  -webkit-animation: none;
+  animation: none;
+}
+
 .cover-page {
   position: absolute;
   top:0;
@@ -166,4 +171,14 @@ img {
 
 .available {
   width: 100%;
+}
+
+.animation-controls {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  color: rgba(0,0,0,0.3);
+  font-family: Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  z-index: 100;
 }
