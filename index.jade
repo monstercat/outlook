@@ -3,8 +3,7 @@ html(lang="en")
   head
     title Monstercat 015 - Outlook
     script(type='text/javascript')
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js')
-    script(src='public/script/jquery.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
     link(rel='stylesheet', type="text/css", href='public/css/font-awesome.min.css')
     link(rel='stylesheet', type="text/css", href='public/css/bootstrap.min.css')
     link(rel='stylesheet', href='outlook.css')
@@ -17,12 +16,12 @@ html(lang="en")
       .side-bar
         .content-container
           .content
-            form.form-horizontal.hidden.form.gift-form(action='/gift',method='post')
+            form.form-horizontal.hidden.form.gift-form
               .control-group
                 .controls
                   h4 Gift a friend 
               .control-group
-                label.control-label(for="friend-email") Friend Email
+                label.control-label.friend-email(for="friend-email") Friend Email
                 .controls
                   input#form-email.input-filed(type='text',placeholder='Your Name', name="name")
               .control-group
@@ -43,6 +42,6 @@ html(lang="en")
                   input#friend-email.input-filed(type='text',placeholder='Friend Email',name='friend-email')
               .control-group
                 .controls
-                  input.btn(type='submit',value='Gift')
+                  input.btn.submit-gift(type='submit',value='Gift')
         .border
           .arrow.clickable
