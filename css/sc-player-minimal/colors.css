@@ -1,0 +1,118 @@
+.sc-player {
+  color: #FFFFFF;
+  line-height: 1.6em;
+  font-weight: bold;
+}
+
+.sc-player.special {
+}
+
+.sc-player a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+/* scrubber */
+
+.sc-scrubber {
+  background: rgba(0,0,0,0);
+  /*border: 2px solid #000;*/
+}
+
+.sc-scrubber .sc-time-span {
+}
+
+.sc-scrubber .sc-time-span img {
+  height: 40px;
+  width: 100%;
+}
+
+.sc-scrubber .sc-buffer {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.sc-scrubber .sc-played {
+  background-color: rgba(0,0,0,0.2);
+}
+
+/* controls */
+
+.sc-player .sc-controls a {
+  color: transparent;
+  background: url('img/play.png');
+}
+
+.sc-player .sc-controls a:hover {
+  background-position: 0 -40px;
+}
+
+.sc-player .sc-controls a.sc-pause {
+  background: url('img/play.png');
+}
+
+.sc-player .sc-controls a.sc-pause:hover{
+  background-position: 0 -40px;
+}
+
+.sc-player.playing .sc-controls a.sc-pause{
+  background: url('img/pause.png');
+}
+
+.sc-player.playing .sc-controls a.sc-pause:hover{
+  background-position: 0 -40px;
+}
+
+.sc-scrubber .sc-time-indicators{
+  color: #FFFFFF;
+  padding: 10px 0 0 5px;
+  font-size: 0.8em;
+  font-weight: normal;
+  line-height: 1em;
+}
+
+/* Track listings*/
+
+.sc-player ol.sc-trackslist li {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sc-player ol.sc-trackslist li.active, .sc-player ol.sc-trackslist li:hover {
+  color: #FFFFFF;
+}
+
+.sc-player ol.sc-trackslist li.active a {
+  color: #FFFFFF;
+}
+
+.sc-track-duration {
+  display: none;
+}
+
+/* Track info*/
+
+.sc-player .sc-info{
+}
+
+.sc-player .sc-info-toggle{
+  color: #003399;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-box-shadow: 1px 1px 4px #ccc;
+  -webkit-box-shadow: 1px 1px 4px #ccc;
+  padding: 4px;
+}
+
+.sc-player .sc-info-toggle:hover{
+  background: #003399;
+  color: #eee;
+}
+
+.sc-player .sc-info-close{
+  background: #003399;
+  color: #fff;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 2px 4px;
+  font-weight: bold;
+}

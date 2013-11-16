@@ -3,11 +3,12 @@ html(lang="en")
   head
     title Monstercat 015 - Outlook
     link(rel='stylesheet', href='css/outlook.css')
+    link(rel='stylesheet', href='css/sc-player-minimal.css')
   body
     div(id="container", class="container")
       ul(id="scene", class="scene")
         li(class="layer", data-depth="0.00")
-          img.stars(src="images/stars.png")
+          div.stars
         li(class="layer", data-depth="0.20")
           img.aurora(src="images/aurora.png")
         li(class="layer", data-depth="0.40")
@@ -16,10 +17,24 @@ html(lang="en")
           img.trees(src="images/trees.png")
         li(class="layer", data-depth="0.80")
           img.grass(src="images/grass.png")
-        li(class="layer", data-depth="1.00")
-          img.cat(src="images/cat.png")
+    div.cover-page
+      div.album-container
+        img.album-name(src="images/album-name.svg")
+        img.album-art(src="images/art.jpg")
+        div.soundcloud-embed
+          div.soundcloud-square
+            a.sc-player(href="https://soundcloud.com/monstercat/sets/monstercat-014-discovery") Album Stream
+        img.available(src="images/avail.svg")
 
     script(src="lib/parallax.min.js")
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")
+    script(src="lib/soundcloud.player.api.js")
+    script(src="lib/sc-player.js")
     script.
       var scene = document.getElementById('scene');
       var parallax = new Parallax(scene);
+    script.
+      $('#sc-container .sc-player').scPlayer({
+          links: [{
+            url: attrs.releaseLink,
+            title: attrs.releaseName}]

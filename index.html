@@ -3,22 +3,40 @@
   <head>
     <title>Monstercat 015 - Outlook</title>
     <link rel="stylesheet" href="css/outlook.css">
+    <link rel="stylesheet" href="css/sc-player-minimal.css">
   </head>
   <body>
     <div id="container" class="container">
       <ul id="scene" class="scene">
-        <li data-depth="0.00" class="layer"><img src="images/stars.png" class="stars"></li>
+        <li data-depth="0.00" class="layer">
+          <div class="stars"></div>
+        </li>
         <li data-depth="0.20" class="layer"><img src="images/aurora.png" class="aurora"></li>
         <li data-depth="0.40" class="layer"><img src="images/mountains.png" class="mountains"></li>
         <li data-depth="0.60" class="layer"><img src="images/trees.png" class="trees"></li>
         <li data-depth="0.80" class="layer"><img src="images/grass.png" class="grass"></li>
-        <li data-depth="1.00" class="layer"><img src="images/cat.png" class="cat"></li>
       </ul>
     </div>
+    <div class="cover-page">
+      <div class="album-container"><img src="images/album-name.svg" class="album-name"><img src="images/art.jpg" class="album-art">
+        <div class="soundcloud-embed">
+          <div class="soundcloud-square"><a href="https://soundcloud.com/monstercat/sets/monstercat-014-discovery" class="sc-player">Album Stream</a></div>
+        </div><img src="images/avail.svg" class="available">
+      </div>
+    </div>
     <script src="lib/parallax.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="lib/soundcloud.player.api.js"></script>
+    <script src="lib/sc-player.js"></script>
     <script>
       var scene = document.getElementById('scene');
       var parallax = new Parallax(scene);
+    </script>
+    <script>
+      $('#sc-container .sc-player').scPlayer({
+          links: [{
+            url: attrs.releaseLink,
+            title: attrs.releaseName}]
     </script>
   </body>
 </html>
