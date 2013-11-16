@@ -4,8 +4,10 @@ $(document).ready(function () {
   $('.gift-form').submit(function (e) {
       console.log('submit form');    
       e.preventDefault();
+      var data = { test:"test" };
       $.ajax({
             type: 'POST', 
+            data: data,
             url: 'http://localhost:8000/gift',
             success: function(data) {
               alert('success');
