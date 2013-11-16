@@ -2,10 +2,47 @@ doctype 5
 html(lang="en")
   head
     title Monstercat 015 - Outlook
-    script(type='text/javascript').
+    script(type='text/javascript')
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js')
+    script(src='public/script/jquery.js')
+    link(rel='stylesheet', type="text/css", href='public/css/font-awesome.min.css')
+    link(rel='stylesheet', type="text/css", href='public/css/bootstrap.min.css')
+    link(rel='stylesheet', href='outlook.css')
+    script(type='text/javascript', src='index.js')
+    script(src='public/script/bootstrap.min.js')
   body
-    h1 Outlook
     #container
-      p.
-        Hello there
+      .scence
+        span outLook Haha
+      .side-bar
+        .content-container
+          .content
+            form.form-horizontal.hidden.form.gift-form(action='/gift',method='post')
+              .control-group
+                .controls
+                  h4 Gift a friend 
+              .control-group
+                label.control-label(for="friend-email") Friend Email
+                .controls
+                  input#form-email.input-filed(type='text',placeholder='Your Name', name="name")
+              .control-group
+                label.control-label(for="friend-email") Email
+                .controls
+                  input#form-name.input-filed(type='text',placeholder='Email',name='email')
+              .control-group
+                label.control-label(for="friend-email") Itune Receipt No 
+                .controls
+                  input#form-name.input-filed(type='text',placeholder='Itune Receipt No',name='receipt-number')
+              .control-group
+                label.control-label(for="friend-email") Friend Name
+                .controls
+                  input#form-name.input-filed(type='text',placeholder='Friend Name',name='friend-name')
+              .control-group
+                label.control-label(for="friend-email") Friend Email
+                .controls
+                  input#friend-email.input-filed(type='text',placeholder='Friend Email',name='friend-email')
+              .control-group
+                .controls
+                  input.btn(type='submit',value='Gift')
+        .border
+          .arrow.clickable
