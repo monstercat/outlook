@@ -13,6 +13,11 @@ img {
   display: block;
 }
 
+a, a:hover, a:visited {
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+}
+
 .box-container {
   width: 100%;
   height: 100%;
@@ -131,14 +136,19 @@ img {
   width: 100%;
 }
 
-.animation-controls {
+.top-right {
   position: absolute;
   top: 4px;
   right: 4px;
-  color: rgba(0,0,0,0.3);
+  color: #FFFFFF;
   font-family: Helvetica, Arial, sans-serif;
   cursor: pointer;
   z-index: 100;
+}
+
+.top-right h4 {
+  padding: 0;
+  margin: 0;
 }
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -159,9 +169,9 @@ img {
   -moz-animation-duration:3s;
   animation-duration:3s;
 
-  -webkit-animation-delay: 6s;
-  -moz-animation-delay: 6s;
-  animation-delay: 6s;
+  -webkit-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 .content-container{
