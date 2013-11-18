@@ -1,19 +1,16 @@
-console.log('loade js file');
 
 $(document).ready(function () {
   var sideBar_open = false;
+  var frm = $('#gift-form');
 
-  $('.gift-form').submit(function (e) {
-      console.log('submit form');    
+  frm.submit(function (e) {
+      console.log('submit form');
       e.preventDefault()
-      var data = { test:"test" };
 
       $.ajax({
-            type: 'POST', 
+            type: 'POST',
             url: 'http://localhost:8000/gift',
-            contentType: "application/json; charset=utf-8",
-            dataType: 'json',
-            data: JSON.stringify(data),
+            data: frm.serialize(),
             success: function(data) {
               alert('success');
             }, error: function (data) {
@@ -23,12 +20,11 @@ $(document).ready(function () {
   });
 
   $(".gift").click(function(){
-    if(sideBar_open){
-      $(".side-bar").animate({right:"-400px"})
+    if(!sideBar_open){
+      $(".side-bar").animate({height:"80%"})
     }else{
-      $(".side-bar").animate({right:"0px"})
+      $(".side-bar").animate({height:"0"})
     }
     sideBar_open = !sideBar_open;
   });
 });
-

@@ -9,9 +9,12 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": [
-    "index.js"
+    "index.js",
+    "lib/jquery.js",
+    "lib/jquery.parallax.min.js",
+    "lib/parallax.min.js"
   ],
   "styles": [
-    "outlook.css"
+    "css/outlook.css"
   ]
 }
