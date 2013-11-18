@@ -45,22 +45,27 @@ a, a:hover, a:visited {
 }
 
 .mountains {
+  width: 150%;
+  height: 100%;
   z-index: -8;
+  background: url('http://data.monstercat.com/outlook/mountains.png');
+  background-size: 100%;
 }
 
 .trees {
+  width: 150%;
+  height: 100%;
   z-index: -7;
+  background: url('http://data.monstercat.com/outlook/trees.png');
+  background-size: 100%;
 }
 
 .grass {
+  width: 150%;
+  height: 80%;
   z-index: -6;
-}
-
-.cat {
-  position: absolute;
-  width: 30%;
-  right: 10%;
-  z-index:-5;
+  background: url('http://data.monstercat.com/outlook/grass.png');
+  background-size: 100%;
 }
 
 @media screen and (orientation:portrait) {
@@ -94,9 +99,41 @@ a, a:hover, a:visited {
 
 .aurora {
   min-height: 125%;
+  width: 150%;
+  background: url('http://data.monstercat.com/outlook/aurora.png');
+  background-size: 100%;
   top: -100px;
   z-index: -9;
-  /*-webkit-animation: wave 4s 0.1s infinite linear;*/
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  .mountains {
+    width: 150%;
+    height: 100%;
+    z-index: -8;
+    background: url('http://data.monstercat.com/outlook/mountains@2x.png');
+    background-size: 100%;
+  }
+
+  .trees {
+    background: url('http://data.monstercat.com/outlook/trees@2x.png');
+    background-size: 100%;
+  }
+
+  .grass {
+    background: url('http://data.monstercat.com/outlook/grass@2x.png');
+    background-size: 100%;
+  }
+
+  .stars {
+    background: url('http://data.monstercat.com/outlook/stars@2x.jpg');
+    background-size: 100%;
+  }
+
+  .aurora {
+    background: url('http://data.monstercat.com/outlook/aurora@2x.png');
+    background-size: 100%;
+  }
 }
 
 .stars {
@@ -104,26 +141,7 @@ a, a:hover, a:visited {
   min-height: 100%;
   z-index: -10;
   background: url('http://data.monstercat.com/outlook/stars.jpg');
-  /*-webkit-animation-duration: 100s;
-  -moz-animation-duration: 100s;
-  -o-animation-duration: 100s;
-  animation-duration: 100s;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -o-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function:linear;
-  -moz-animation-timing-function:linear;
-  -o-animation-timing-function:linear;
-  animation-timing-function:linear;
-  -webkit-animation-name: scrollbg;
-  -moz-animation-name: scrollbg;
-  -o-animation-name: scrollbg;
-  animation-name: scrollbg;*/
+  background-size: 100%;
 }
 
 .cover-page {
