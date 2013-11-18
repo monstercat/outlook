@@ -1,9 +1,10 @@
 var mongoose = require('mongoose');
 var submitterSchema = new mongoose.Schema({
+  name: String,
   email: String,
-  ItuneNo: String,
-  friendEmail: String,
+  ituneNo: String,
   friendName: String
+  friendEmail: String,
 });
 
 var submitter = mongoose.model('submitter', submitterSchema);
