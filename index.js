@@ -7,8 +7,6 @@ $(document).ready(function () {
       console.log('submit form');    
       e.preventDefault()
       var data = { test:"test" };
-      console.log('show submit');
-      console.log(data);
 
       $.ajax({
             type: 'POST', 
