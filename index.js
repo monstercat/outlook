@@ -3,6 +3,8 @@ $(document).ready(function () {
   var sideBar_open = false;
   var frm = $('#gift-form');
 
+  frm.attr('disabled','disabled');
+
   frm.submit(function (e) {
       console.log('submit form');
       e.preventDefault()

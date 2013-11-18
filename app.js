@@ -16,7 +16,7 @@ var sendGift = function(sender, senderEmail, receivera, receiverEmail){
   var to = 'zhangyangxu@gmail.com';
   var from = 'connect@monstercat.com';
   var subject = 'test email for gift';
-  time = 10;
+  time = 10000;
 
   var job = jobs.create('outlook gift email', {
       to : to
@@ -32,13 +32,15 @@ var sendGift = function(sender, senderEmail, receivera, receiverEmail){
   job.on("failed", function (err) {
     console.log('email send err');
   });
-
+  
+  job.delay(time);
   job.attempts(2);
   job.save();
+  jobs.promote();
 }
 
 var validateItuneCode = function(itunesNo, cb){
-  Submitter.find({receiptNum: receiptNum}, function(err, docs){
+  Submitter.find({itunesNo: itunesNo}, function(err, docs){
     if(docs.length>0){ 
       return cb('duplicated itunes number');
     }
@@ -56,9 +58,7 @@ app.configure(function(){
 });
 
 app.post('/gift', function(req, res){
-
-  console.log('get new request');
-  console.log(req.body);
+  console.log('get gift request');
   var name = req.body.name;
   var email = req.body.email;
   var itunesNo = req.body.itunesNo;
@@ -66,6 +66,11 @@ app.post('/gift', function(req, res){
   var friendName = req.body.friendName;
 
   validateItuneCode(req.body.ituneCode, function(err){
+    if(err){
+      console.log(err);
+      return
+    }
+
     var new_submitter =  new Submitter({
       name: name,
       email:email,
