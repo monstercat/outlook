@@ -258,6 +258,13 @@ a, a:hover, a:visited {
   opacity: 0.3;
 }
 
+.arrow:hover {
+  background: url('http://data.monstercat.com/outlook/gift_hover.svg');
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 @-webkit-keyframes fadeUp {
   0% { bottom:-100px; }
   80% { bottom: 20px; }
