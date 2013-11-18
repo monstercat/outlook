@@ -29,4 +29,6 @@ $(document).ready(function () {
     }
     sideBar_open = !sideBar_open;
   });
+
+  $('#gift-btn').tooltip();
 });

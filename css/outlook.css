@@ -252,3 +252,7 @@ a, a:hover, a:visited {
   color: red;
 }
 
+.side-bar .tooltip-inner{
+  font-size: 18px;
+}
+
