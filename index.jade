@@ -15,7 +15,7 @@ html(lang="en")
       .side-bar
         .content-container
           .content
-            form.form-horizontal.hidden.form.gift-form
+            form.form-horizontal.hidden.form#gift-form
               .control-group
                 .controls
                   h4 Gift a friend 
@@ -30,15 +30,15 @@ html(lang="en")
               .control-group
                 label.control-label(for="friend-email") Itune Receipt No 
                 .controls
-                  input#form-name.input-filed(type='text',placeholder='Itune Receipt No',name='receipt-number')
+                  input#form-name.input-filed(type='text',placeholder='Itune Receipt No',name='itunesNo')
               .control-group
                 label.control-label(for="friend-email") Friend Name
                 .controls
-                  input#form-name.input-filed(type='text',placeholder='Friend Name',name='friend-name')
+                  input#form-name.input-filed(type='text',placeholder='Friend Name',name='friednName')
               .control-group
                 label.control-label(for="friend-email") Friend Email
                 .controls
-                  input#friend-email.input-filed(type='text',placeholder='Friend Email',name='friend-email')
+                  input#friend-email.input-filed(type='text',placeholder='Friend Email',name='friendEmail')
               .control-group
                 .controls
                   input.btn.submit-gift(type='submit',value='Gift')

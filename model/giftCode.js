@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
-var giftCodeSchema = new mongoose.giftCode({
+var giftCodeSchema = new mongoose.Schema({
   code: String,
-  used: boolean
+  used: Boolean
 });
 
 var giftCode = mongoose.model('gift', giftCodeSchema);

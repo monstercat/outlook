@@ -36,14 +36,20 @@ app.configure(function(){
 });
 
 app.post('/gift', function(req, res){
-  console.log(req)
-  console.log(req.body)
+
   console.log('get new request');
+  console.log(req.body);
+  var name = req.body.name;
+  var email = req.body.email;
+  var itunesNo = req.body.itunesNo;
+  var friendEmail = req.body.friendEmail;
+  var friendName = req.body.friendName;
+
   validateItuneCode(req.body.ituneCode, function(err){
     var new_submitter =  new submitter({
       name: name,
       email:email,
-      ituneNo:itueNo,
+      itunesNo:itunesNo,
       friendEmail: friendEmail,
       friendName: friendName
      });
