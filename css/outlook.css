@@ -251,7 +251,7 @@ a, a:hover, a:visited {
   left: 50%;
   margin: -60px 0 0 -30px;
   position: absolute;
-  background: url('../images/gift.svg');
+  background: url('http://data.monstercat.com/outlook/gift.svg');
   background-size: 80%;
   background-position: center;
   background-repeat: no-repeat;
