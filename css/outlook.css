@@ -13,6 +13,11 @@ img {
   display: block;
 }
 
+a, a:hover, a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
 .box-container {
   width: 100%;
   height: 100%;
@@ -150,6 +155,7 @@ img {
 .album-art {
   float: left;
   width: 50%;
+  margin: 0 25% 0 25%;
 }
 
 .soundcloud-square {
@@ -164,18 +170,19 @@ img {
   margin: -20px 0 0 0;
 }
 
-.available {
-  width: 100%;
-}
-
-.animation-controls {
+.top-right {
   position: absolute;
   top: 4px;
   right: 4px;
-  color: rgba(0,0,0,0.3);
+  color: #FFFFFF;
   font-family: Helvetica, Arial, sans-serif;
   cursor: pointer;
   z-index: 100;
+}
+
+.top-right h4 {
+  padding: 0;
+  margin: 0;
 }
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -199,6 +206,27 @@ img {
   -webkit-animation-delay: 6s;
   -moz-animation-delay: 6s;
   animation-delay: 6s;
+}
+
+.available {
+  width: 50%;
+  margin: 0 25% 0 25%;
+  opacity: 0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:3s;
+  -moz-animation-duration:3s;
+  animation-duration:3s;
+
+  -webkit-animation-delay: 8s;
+  -moz-animation-delay: 8s;
+  animation-delay: 8s;
 }
 
 .content-container{
@@ -227,7 +255,7 @@ img {
   background-size: 80%;
   background-position: center;
   background-repeat: no-repeat;
-  cursor: pointer;
+  opacity: 0.3;
 }
 
 @-webkit-keyframes fadeUp {
@@ -262,20 +290,7 @@ img {
   -moz-animation-duration:0.4s;
   animation-duration:0.4s;
 
-  -webkit-animation-delay: 8s;
-  -moz-animation-delay: 8s;
-  animation-delay: 8s;
+  -webkit-animation-delay: 12s;
+  -moz-animation-delay: 12s;
+  animation-delay: 12s;
 }
-
-.border{
-  overflow: auto;
-  top: 50%;
-  position: relative;
-}
-
-.icon-gift{
-  margin: 40px 0px 0px 20px;
-  font-size: 32px;
-  color: red;
-}
-

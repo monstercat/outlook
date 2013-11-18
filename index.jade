@@ -3,9 +3,6 @@ html(lang="en")
   head
     title Monstercat 015 - Outlook
     link(rel='stylesheet', href='css/outlook.css')
-    link(rel='stylesheet', href='css/sc-player-minimal.css')
-    link(rel='stylesheet', type="text/css", href='public/css/font-awesome.min.css')
-    link(rel='stylesheet', type="text/css", href='public/css/bootstrap.min.css')
   body
     div(id="container", class="box-container")
       ul(id="scene", class="scene")
@@ -21,53 +18,15 @@ html(lang="en")
           img.grass(src="http://data.monstercat.com/outlook/grass.png")
     div.cover-page.fade-in
       div.album-container
-        img.album-name(src="http://data.monstercat.com/outlook/album-name.svg")
         img.album-art(src="http://data.monstercat.com/outlook/art.jpg")
-        div.soundcloud-embed
-          div.soundcloud-square
-            a.sc-player(href="https://soundcloud.com/monstercat/sets/monstercat-014-discovery")
-        img.available(src="http://data.monstercat.com/outlook/avail.svg")
+        img.available(src="http://data.monstercat.com/outlook/release.svg")
+    div.top-right
+      a(href="www.monstercat.com")
+        h4 Continue to Monstercat.com
     .side-bar
-      .content-container
-        .content
-          form.form-horizontal.hidden.form.gift-form
-            h4.text-center Gift this album to a friend
-            .control-group
-              label.control-label.friend-email(for="name") Your Name
-              .controls
-                input#form-email.input-field(type='text',placeholder='Your Name', name="name")
-            .control-group
-              label.control-label(for="email") Your Email
-              .controls
-                input#form-name.input-field(type='text',placeholder='Your Email',name='email')
-            .control-group
-              label.control-label(for="receipt-number") iTunes Receipt No.
-              .controls
-                input#form-name.input-field(type='text',placeholder='iTunes Receipt No.',name='receipt-number')
-            .control-group
-              label.control-label(for="friend-name") Friend's Name
-              .controls
-                input#form-name.input-field(type='text',placeholder='Friends Name',name='friend-name')
-            .control-group
-              label.control-label(for="friend-email") Friend's Email
-              .controls
-                input#friend-email.input-field(type='text',placeholder='Friends Email',name='friend-email')
-            .control-group
-              .controls
-                input.btn.submit-gift(type='submit',value='Gift')
       .gift.clickable.arrow
     script(src="lib/parallax.min.js")
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")
-    script(src="lib/soundcloud.player.api.js")
-    script(src="lib/sc-player.js")
-    script(src='public/script/bootstrap.min.js')
-    script(type='text/javascript', src='index.js')
     script.
       var scene = document.getElementById('scene');
       var parallax = new Parallax(scene);
-    script.
-      $(window).resize(
-        function () {
-          $('ol.sc-trackslist').css('height', Math.min($(window).width()/2-61, 239) + "px");
-        }
-      );
