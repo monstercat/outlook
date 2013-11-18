@@ -1,18 +1,16 @@
 
 $(document).ready(function () {
   var sideBar_open = false;
+  var frm = $('#gift-form');
 
-  $('.gift-form').submit(function (e) {
+  frm.submit(function (e) {
       console.log('submit form');
       e.preventDefault()
-      var data = { test:"test" };
 
       $.ajax({
             type: 'POST',
             url: 'http://localhost:8000/gift',
-            contentType: "application/json; charset=utf-8",
-            dataType: 'json',
-            data: JSON.stringify(data),
+            data: frm.serialize(),
             success: function(data) {
               alert('success');
             }, error: function (data) {
@@ -30,4 +28,3 @@ $(document).ready(function () {
     sideBar_open = !sideBar_open;
   });
 });
-
