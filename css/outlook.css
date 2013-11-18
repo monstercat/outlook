@@ -206,7 +206,7 @@ img {
   float: right;
   height: 100%;
   overflow: auto;
-  background-color: rgba(34, 34, 34, 1);
+  background-color: rgba(34, 34, 34, 0.9);
   width: 100%;
 }
 
@@ -222,7 +222,6 @@ img {
   height: 60px;
   left: 50%;
   margin: -60px 0 0 -30px;
-  background-color: rgba(34, 34, 34, 1);
   position: absolute;
   background: url('../images/gift.svg');
   background-size: 80%;
