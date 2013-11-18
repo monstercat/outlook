@@ -70,28 +70,10 @@ img {
   }
 }
 
-
-@-webkit-keyframes scrollbg {
-  0% { background-position: 0; }
-  100% { background-position: 100%; }
-}
-
-@-webkit-keyframes wave {
-  0% {
-    -webkit-transform: rotateZ(0deg) translate3d(0,0.3%,0) rotateZ(0deg);
-    -moz-transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
-    transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg); }
-
-  100% {
-    -webkit-transform: rotateZ(360deg) translate3d(0,0.3%,0) rotateZ(-360deg);
-    -moz-transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg);
-    transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg); } }
-
 .aurora {
   min-height: 125%;
   top: -100px;
   z-index: -9;
-  /*-webkit-animation: wave 4s 0.1s infinite linear;*/
 }
 
 .stars {
@@ -99,26 +81,6 @@ img {
   min-height: 100%;
   z-index: -10;
   background: url('http://data.monstercat.com/outlook/stars.jpg');
-  /*-webkit-animation-duration: 100s;
-  -moz-animation-duration: 100s;
-  -o-animation-duration: 100s;
-  animation-duration: 100s;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -o-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function:linear;
-  -moz-animation-timing-function:linear;
-  -o-animation-timing-function:linear;
-  animation-timing-function:linear;
-  -webkit-animation-name: scrollbg;
-  -moz-animation-name: scrollbg;
-  -o-animation-name: scrollbg;
-  animation-name: scrollbg;*/
 }
 
 .cover-page {
@@ -153,9 +115,10 @@ img {
 }
 
 .soundcloud-square {
-  width: 100%;
+  width: 98%;
   height: 0;
   padding-bottom: 100%;
+  padding-left: 2%;
 }
 
 .soundcloud-embed {
