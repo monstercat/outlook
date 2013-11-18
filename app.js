@@ -11,17 +11,19 @@ var express = require('express')
   , app = express();
 
 var sendGift = function(sender, senderEmail, receivera, receiverEmail){
-  var html = '';
-  var to = '';
-  var from = '';
-  time = 60*60*24;
+  console.log('send email');
+  var html = '<div> test email<div>';
+  var to = 'zhangyangxu@gmail.com';
+  var from = 'connect@monstercat.com';
+  var subject = 'test email for gift';
+  time = 10;
 
   jobs.create('outlook gift email', {
      to : to
     , from: from 
     , subject: subject
     , html: html
-  }).delay(time).save();
+  }).save();
 }
 
 var validateItuneCode = function(receiptNum, cb){
@@ -55,7 +57,8 @@ app.post('/gift', function(req, res){
      });
 
     new_submitter.save(function(err, doc){
-      sendGift(name,email,friendEmai,friendName);
+      console.log('saved user');
+      sendGift(name,email,friendEmail,friendName);
     });
   });
 });
