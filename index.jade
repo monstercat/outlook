@@ -10,23 +10,21 @@ html(lang="en")
         li(class="layer", data-depth="0.00")
           div.stars
         li(class="layer", data-depth="0.20")
-          img.aurora(src="images/aurora.png")
+          img.aurora(src="//data.monstercat.com/outlook/aurora.png")
         li(class="layer", data-depth="0.40")
-          img.mountains(src="images/mountains.png")
+          img.mountains(src="//data.monstercat.com/outlook/mountains.png")
         li(class="layer", data-depth="0.60")
-          img.trees(src="images/trees.png")
+          img.trees(src="//data.monstercat.com/outlook/trees.png")
         li(class="layer", data-depth="0.80")
-          img.grass(src="images/grass.png")
-    div.cover-page
+          img.grass(src="//data.monstercat.com/outlook/grass.png")
+    div.cover-page.fade-in
       div.album-container
-        img.album-name(src="images/album-name.svg")
-        img.album-art(src="images/art.jpg")
+        img.album-name(src="//data.monstercat.com/outlook/album-name.svg")
+        img.album-art(src="//data.monstercat.com/outlook/art.jpg")
         div.soundcloud-embed
           div.soundcloud-square
             a.sc-player(href="https://soundcloud.com/monstercat/sets/monstercat-014-discovery")
-        img.available(src="images/avail.svg")
-
-    div.animation-controls Toggle Animation
+        img.available(src="//data.monstercat.com/outlook/avail.svg")
 
     script(src="lib/parallax.min.js")
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")
@@ -41,6 +39,3 @@ html(lang="en")
           $('ol.sc-trackslist').css('height', Math.min($(window).width()/2-61, 239) + "px");
         }
       );
-      $('.animation-controls').on('click', function () {
-        $('body').toggleClass('paused');
-      });

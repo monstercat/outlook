@@ -91,15 +91,15 @@ img {
   min-height: 125%;
   top: -100px;
   z-index: -9;
-  -webkit-animation: wave 4s 0.1s infinite linear;
+  /*-webkit-animation: wave 4s 0.1s infinite linear;*/
 }
 
 .stars {
   width: 200%;
   min-height: 100%;
   z-index: -10;
-  background: url('../images/stars.png');
-  -webkit-animation-duration: 100s;
+  background: url('http://data.monstercat.com/outlook/stars.png');
+  /*-webkit-animation-duration: 100s;
   -moz-animation-duration: 100s;
   -o-animation-duration: 100s;
   animation-duration: 100s;
@@ -118,7 +118,7 @@ img {
   -webkit-animation-name: scrollbg;
   -moz-animation-name: scrollbg;
   -o-animation-name: scrollbg;
-  animation-name: scrollbg;
+  animation-name: scrollbg;*/
 }
 
 .paused * {
@@ -181,4 +181,27 @@ img {
   font-family: Helvetica, Arial, sans-serif;
   cursor: pointer;
   z-index: 100;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:3s;
+  -moz-animation-duration:3s;
+  animation-duration:3s;
+
+  -webkit-animation-delay: 6s;
+  -moz-animation-delay: 6s;
+  animation-delay: 6s;
 }
