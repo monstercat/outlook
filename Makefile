@@ -1,5 +1,5 @@
 
-build: components index.js outlook.css index.html
+build: components index.js css/outlook.css index.html
 	@component build --dev
 
 components: component.json

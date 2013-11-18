@@ -1,0 +1,254 @@
+body {
+  height: 100%;
+  overflow: hidden;
+  background-color: #111;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+img {
+  display: block;
+}
+
+a, a:hover, a:visited {
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+}
+
+.box-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.scene {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.grass, .trees, .mountains, .aurora, .stars {
+  max-width: 150%;
+  position: absolute;
+  left: -25%;
+}
+
+.mountains, .trees, .grass, .mountains, .cat {
+  bottom: -45%;
+}
+
+.mountains {
+  z-index: -8;
+}
+
+.trees {
+  z-index: -7;
+}
+
+.grass {
+  z-index: -6;
+}
+
+.cat {
+  position: absolute;
+  width: 30%;
+  right: 10%;
+  z-index:-5;
+}
+
+@media screen and (orientation:portrait) {
+  .mountains, .trees, .grass, .mountains, .cat {
+    bottom: -10%;
+  }
+}
+
+@media screen and (orientation:landscape) and (min-width: 1000px) {
+  .mountains, .trees, .grass, .mountains, .cat {
+    bottom: -55%;
+  }
+}
+
+.aurora {
+  min-height: 125%;
+  top: -100px;
+  z-index: -9;
+}
+
+.stars {
+  width: 200%;
+  min-height: 100%;
+  z-index: -10;
+  background: url('http://data.monstercat.com/outlook/stars.jpg');
+}
+
+.cover-page {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.album-container {
+  position: relative;
+  max-width: 100%;
+  width: 600px;
+  top: 20%;
+  margin: 0 auto;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.album-name {
+  width: 100%;
+}
+
+.album-art {
+  float: left;
+  width: 50%;
+}
+
+.soundcloud-square {
+  width: 98%;
+  height: 0;
+  padding-bottom: 100%;
+  padding-left: 2%;
+}
+
+.soundcloud-embed {
+  float: left;
+  width: 50%;
+  margin: -20px 0 0 0;
+}
+
+.available {
+  width: 100%;
+}
+
+.top-right {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  color: #FFFFFF;
+  font-family: Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.top-right h4 {
+  padding: 0;
+  margin: 0;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:3s;
+  -moz-animation-duration:3s;
+  animation-duration:3s;
+
+  -webkit-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+  animation-delay: 3s;
+}
+
+.content-container{
+  color: white;
+  float: right;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(34, 34, 34, 0.9);
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.arrow{
+  float: left;
+  width: 60px;
+  height: 60px;
+  left: 50%;
+  margin: -60px 0 0 -30px;
+  position: absolute;
+  background: url('http://data.monstercat.com/outlook/gift.svg');
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+@-webkit-keyframes fadeUp {
+  0% { bottom:-100px; }
+  80% { bottom: 20px; }
+  100% { bottom:0; } }
+@-moz-keyframes fadeUp {
+  0% { bottom:-100px; }
+  80% { bottom: 20px; }
+  100% { bottom:0; } }
+@keyframes fadeUp {
+  0% { bottom:-100px; }
+  75% { bottom: 25px; }
+  100% { bottom:0; } }
+
+.side-bar{
+  position: absolute;
+  height: 0;
+  bottom: -100px;
+  width: 100%;
+  font-family: sans-serif;
+  z-index: 100000;
+  -webkit-animation:fadeUp ease-in 1;
+  -moz-animation:fadeUp ease-in 1;
+  animation:fadeUp ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:0.4s;
+  -moz-animation-duration:0.4s;
+  animation-duration:0.4s;
+
+  -webkit-animation-delay: 8s;
+  -moz-animation-delay: 8s;
+  animation-delay: 8s;
+}
+
+.border{
+  overflow: auto;
+  top: 50%;
+  position: relative;
+}
+
+.icon-gift{
+  margin: 40px 0px 0px 20px;
+  font-size: 32px;
+  color: red;
+}
+

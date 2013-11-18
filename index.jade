@@ -2,46 +2,75 @@ doctype 5
 html(lang="en")
   head
     title Monstercat 015 - Outlook
-    script(type='text/javascript')
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    link(rel='stylesheet', href='css/outlook.css')
+    link(rel='stylesheet', href='css/sc-player-minimal.css')
     link(rel='stylesheet', type="text/css", href='public/css/font-awesome.min.css')
     link(rel='stylesheet', type="text/css", href='public/css/bootstrap.min.css')
-    link(rel='stylesheet', href='outlook.css')
-    script(type='text/javascript', src='index.js')
-    script(src='public/script/bootstrap.min.js')
   body
-    #container
-      .scence
-      .side-bar
-        .content-container
-          .content
-            form.form-horizontal.hidden.form#gift-form
-              .control-group
-                .controls
-                  h4 Gift a friend 
-              .control-group
-                label.control-label.friend-email(for="friend-email") Friend Email
-                .controls
-                  input#form-email.input-filed(type='text',placeholder='Your Name', name="name")
-              .control-group
-                label.control-label(for="friend-email") Email
-                .controls
-                  input#form-name.input-filed(type='text',placeholder='Email',name='email')
-              .control-group
-                label.control-label(for="friend-email") Itune Receipt No 
-                .controls
-                  input#form-name.input-filed(type='text',placeholder='Itune Receipt No',name='itunesNo')
-              .control-group
-                label.control-label(for="friend-email") Friend Name
-                .controls
-                  input#form-name.input-filed(type='text',placeholder='Friend Name',name='friednName')
-              .control-group
-                label.control-label(for="friend-email") Friend Email
-                .controls
-                  input#friend-email.input-filed(type='text',placeholder='Friend Email',name='friendEmail')
-              .control-group
-                .controls
-                  input.btn.submit-gift(type='submit',value='Gift')
-        .border
-          .gift.clickable.arrow
-            i.icon-gift.icon-large
+    div(id="container", class="box-container")
+      ul(id="scene", class="scene")
+        li(class="layer", data-depth="0.00")
+          div.stars
+        li(class="layer", data-depth="0.20")
+          img.aurora(src="http://data.monstercat.com/outlook/aurora.png")
+        li(class="layer", data-depth="0.40")
+          img.mountains(src="http://data.monstercat.com/outlook/mountains.png")
+        li(class="layer", data-depth="0.60")
+          img.trees(src="http://data.monstercat.com/outlook/trees.png")
+        li(class="layer", data-depth="0.80")
+          img.grass(src="http://data.monstercat.com/outlook/grass.png")
+    div.cover-page.fade-in
+      div.album-container
+        img.album-name(src="http://data.monstercat.com/outlook/album-name.svg")
+        img.album-art(src="http://data.monstercat.com/outlook/art.jpg")
+        div.soundcloud-embed
+          div.soundcloud-square
+            a.sc-player(href="https://soundcloud.com/monstercat/sets/monstercat-014-discovery")
+        img.available(src="http://data.monstercat.com/outlook/avail.svg")
+    .side-bar
+      .content-container
+        .content
+          form.form-horizontal.hidden.form.gift-form
+            h4.text-center Gift this album to a friend
+            .control-group
+              label.control-label.friend-email(for="name") Your Name
+              .controls
+                input#form-email.input-field(type='text',placeholder='Name', name="name")
+            .control-group
+              label.control-label(for="email") Your Email
+              .controls
+                input#form-name.input-field(type='text',placeholder='Email',name='email')
+            .control-group
+              label.control-label(for="iTunesNo") iTunes Receipt No.
+              .controls
+                input#form-name.input-field(type='text',placeholder='iTunes Receipt No.',name='iTunesNo')
+            .control-group
+              label.control-label(for="friendName") Friend's Name
+              .controls
+                input#form-name.input-field(type='text',placeholder='Name',name='friendName')
+            .control-group
+              label.control-label(for="friendEmail") Friend's Email
+              .controls
+                input#friend-email.input-field(type='text',placeholder='Email',name='friendEmail')
+            .control-group
+              .controls
+                input.btn.submit-gift(type='submit',value='Gift')
+      .gift.clickable.arrow
+    div.top-right
+      a(href="www.monstercat.com")
+        h4 Continue to Monstercat.com
+    script(src="lib/parallax.min.js")
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")
+    script(src="lib/soundcloud.player.api.js")
+    script(src="lib/sc-player.js")
+    script(src='public/script/bootstrap.min.js')
+    script(type='text/javascript', src='index.js')
+    script.
+      var scene = document.getElementById('scene');
+      var parallax = new Parallax(scene);
+    script.
+      $(window).resize(
+        function () {
+          $('ol.sc-trackslist').css('height', Math.min($(window).width()/2-61, 239) + "px");
+        }
+      );
