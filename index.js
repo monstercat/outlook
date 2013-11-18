@@ -1,25 +1,33 @@
-console.log('loade js file');
 
 $(document).ready(function () {
+  var sideBar_open = false;
+
   $('.gift-form').submit(function (e) {
-      console.log('submit form');    
-      e.preventDefault();
+      console.log('submit form');
+      e.preventDefault()
       var data = { test:"test" };
+
       $.ajax({
-            type: 'POST', 
-            data: data,
+            type: 'POST',
             url: 'http://localhost:8000/gift',
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            data: JSON.stringify(data),
             success: function(data) {
               alert('success');
             }, error: function (data) {
-              alert('failed');
+              return;
             }
       });
   });
 
-  $(".friend-email").click(function(){
-    console.log('show click');
-    $(".side-bar").css("right","-500px");
+  $(".gift").click(function(){
+    if(!sideBar_open){
+      $(".side-bar").animate({height:"80%"})
+    }else{
+      $(".side-bar").animate({height:"0"})
+    }
+    sideBar_open = !sideBar_open;
   });
 });
 

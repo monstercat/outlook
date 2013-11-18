@@ -12,6 +12,11 @@
   color: #FFFFFF;
 }
 
+.sc-player a:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
 /* scrubber */
 
 .sc-scrubber {
@@ -91,7 +96,11 @@
 
 /* Track info*/
 
-.sc-player .sc-info{
+.sc-player .sc-info h3{
+  line-height: 1.6em;
+  margin: 20px 0;
+  color: inherit;
+  text-rendering: optimizelegibility;
 }
 
 .sc-player .sc-info-toggle{
