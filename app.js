@@ -4,7 +4,7 @@ var kue = require('kue')
 jobs = kue.createQueue();
 
 var path = require('path');
-var submitter = require('./model/submitter');
+var Submitter = require('./model/submitter');
 var giftCode = require('./model/giftCode');
 var express = require('express')
   , cors = require('cors')
@@ -18,16 +18,34 @@ var sendGift = function(sender, senderEmail, receivera, receiverEmail){
   var subject = 'test email for gift';
   time = 10;
 
-  jobs.create('outlook gift email', {
-     to : to
+  var job = jobs.create('outlook gift email', {
+      to : to
     , from: from 
     , subject: subject
     , html: html
-  }).save();
+  });
+
+  job.on("complete", function () {
+    console.log('email send successfull');
+  });
+
+  job.on("failed", function (err) {
+    console.log('email send err');
+  });
+
+  job.attempts(2);
+  job.save();
 }
 
-var validateItuneCode = function(receiptNum, cb){
-  cb(null);
+var validateItuneCode = function(itunesNo, cb){
+  Submitter.find({receiptNum: receiptNum}, function(err, docs){
+    if(docs.length>0){ 
+      return cb('duplicated itunes number');
+    }
+    else{
+      return cb(null);
+    }
+  }); 
 }
 
 app.configure(function(){
@@ -48,7 +66,7 @@ app.post('/gift', function(req, res){
   var friendName = req.body.friendName;
 
   validateItuneCode(req.body.ituneCode, function(err){
-    var new_submitter =  new submitter({
+    var new_submitter =  new Submitter({
       name: name,
       email:email,
       itunesNo:itunesNo,
