@@ -5,6 +5,7 @@ jobs = kue.createQueue();
 
 var path = require('path');
 var submitter = require('./model/submitter');
+var giftCode = require('./model/giftCode');
 var express = require('express')
   , cors = require('cors')
   , app = express();
@@ -24,7 +25,7 @@ var sendGift = function(sender, senderEmail, receivera, receiverEmail){
 }
 
 var validateItuneCode = function(receiptNum, cb){
-
+  cb(null);
 }
 
 app.configure(function(){
