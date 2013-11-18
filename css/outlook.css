@@ -227,6 +227,7 @@ img {
   top: 0px;
   font-family: sans-serif;
   right:0px;
+  z-index: 1000000;
 }
 
 .side-bar-icon{
