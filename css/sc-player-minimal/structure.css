@@ -83,6 +83,7 @@
 .sc-scrubber .sc-time-span{
   height: 40px;
   position: relative;
+  margin-left: 0 !important;
 }
 
 .sc-scrubber .sc-buffer, .sc-scrubber .sc-played{

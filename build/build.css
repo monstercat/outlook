@@ -13,7 +13,7 @@ img {
   display: block;
 }
 
-.container {
+.box-container {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -91,15 +91,15 @@ img {
   min-height: 125%;
   top: -100px;
   z-index: -9;
-  -webkit-animation: wave 4s 0.1s infinite linear;
+  /*-webkit-animation: wave 4s 0.1s infinite linear;*/
 }
 
 .stars {
   width: 200%;
   min-height: 100%;
   z-index: -10;
-  background: url(".//outlook/css/../images/stars.png");
-  -webkit-animation-duration: 100s;
+  background: url('http://data.monstercat.com/outlook/stars.png');
+  /*-webkit-animation-duration: 100s;
   -moz-animation-duration: 100s;
   -o-animation-duration: 100s;
   animation-duration: 100s;
@@ -118,7 +118,7 @@ img {
   -webkit-animation-name: scrollbg;
   -moz-animation-name: scrollbg;
   -o-animation-name: scrollbg;
-  animation-name: scrollbg;
+  animation-name: scrollbg;*/
 }
 
 .paused * {
@@ -197,11 +197,11 @@ img {
   -moz-animation-fill-mode:forwards;
   animation-fill-mode:forwards;
 
-  -webkit-animation-duration:1s;
-  -moz-animation-duration:1s;
-  animation-duration:1s;
+  -webkit-animation-duration:3s;
+  -moz-animation-duration:3s;
+  animation-duration:3s;
 
-  -webkit-animation-delay: 3s;
-  -moz-animation-delay: 3s;
-  animation-delay: 3s;
+  -webkit-animation-delay: 6s;
+  -moz-animation-delay: 6s;
+  animation-delay: 6s;
 }

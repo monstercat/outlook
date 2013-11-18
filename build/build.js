@@ -207,7 +207,32 @@ require.relative = function(parent) {
   return localRequire;
 };
 require.register("outlook/index.js", Function("exports, require, module",
-"//@ sourceURL=outlook/index.js"
+"console.log('loade js file');\n\
+\n\
+$(document).ready(function () {\n\
+  $('.gift-form').submit(function (e) {\n\
+      console.log('submit form');    \n\
+      e.preventDefault();\n\
+      var data = { test:\"test\" };\n\
+      $.ajax({\n\
+            type: 'POST', \n\
+            data: data,\n\
+            url: 'http://localhost:8000/gift',\n\
+            success: function(data) {\n\
+              alert('success');\n\
+            }, error: function (data) {\n\
+              alert('failed');\n\
+            }\n\
+      });\n\
+  });\n\
+\n\
+  $(\".friend-email\").click(function(){\n\
+    console.log('show click');\n\
+    $(\".side-bar\").css(\"right\",\"-500px\");\n\
+  });\n\
+});\n\
+\n\
+//@ sourceURL=outlook/index.js"
 ));
 require.register("outlook/lib/jquery.js", Function("exports, require, module",
 "/*!\n\

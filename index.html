@@ -4,31 +4,85 @@
     <title>Monstercat 015 - Outlook</title>
     <link rel="stylesheet" href="css/outlook.css">
     <link rel="stylesheet" href="css/sc-player-minimal.css">
+    <link rel="stylesheet" type="text/css" href="public/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css">
   </head>
   <body>
-    <div id="container" class="container">
+    <div id="container" class="box-container">
       <ul id="scene" class="scene">
         <li data-depth="0.00" class="layer">
           <div class="stars"></div>
         </li>
-        <li data-depth="0.20" class="layer"><img src="images/aurora.png" class="aurora"></li>
-        <li data-depth="0.40" class="layer"><img src="images/mountains.png" class="mountains"></li>
-        <li data-depth="0.60" class="layer"><img src="images/trees.png" class="trees"></li>
-        <li data-depth="0.80" class="layer"><img src="images/grass.png" class="grass"></li>
+        <li data-depth="0.20" class="layer"><img src="http://data.monstercat.com/outlook/aurora.png" class="aurora"></li>
+        <li data-depth="0.40" class="layer"><img src="http://data.monstercat.com/outlook/mountains.png" class="mountains"></li>
+        <li data-depth="0.60" class="layer"><img src="http://data.monstercat.com/outlook/trees.png" class="trees"></li>
+        <li data-depth="0.80" class="layer"><img src="http://data.monstercat.com/outlook/grass.png" class="grass"></li>
       </ul>
     </div>
     <div class="cover-page fade-in">
-      <div class="album-container"><img src="images/album-name.svg" class="album-name"><img src="images/art.jpg" class="album-art">
+      <div class="album-container"><img src="http://data.monstercat.com/outlook/album-name.svg" class="album-name"><img src="http://data.monstercat.com/outlook/art.jpg" class="album-art">
         <div class="soundcloud-embed">
           <div class="soundcloud-square"><a href="https://soundcloud.com/monstercat/sets/monstercat-014-discovery" class="sc-player"></a></div>
-        </div><img src="images/avail.svg" class="available">
+        </div><img src="http://data.monstercat.com/outlook/avail.svg" class="available">
       </div>
     </div>
-    <div class="animation-controls">Toggle Animation</div>
+    <div class="side-bar">
+      <div class="content-container">
+        <div class="content">
+          <form class="form-horizontal hidden form gift-form">
+            <div class="control-group">
+              <div class="controls">
+                <h4>Gift a friend</h4>
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="friend-email" class="control-label friend-email">Friend Email</label>
+              <div class="controls">
+                <input id="form-email" type="text" placeholder="Your Name" name="name" class="input-filed">
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="friend-email" class="control-label">Email</label>
+              <div class="controls">
+                <input id="form-name" type="text" placeholder="Email" name="email" class="input-filed">
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="friend-email" class="control-label">Itune Receipt No</label>
+              <div class="controls">
+                <input id="form-name" type="text" placeholder="Itune Receipt No" name="receipt-number" class="input-filed">
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="friend-email" class="control-label">Friend Name</label>
+              <div class="controls">
+                <input id="form-name" type="text" placeholder="Friend Name" name="friend-name" class="input-filed">
+              </div>
+            </div>
+            <div class="control-group">
+              <label for="friend-email" class="control-label">Friend Email</label>
+              <div class="controls">
+                <input id="friend-email" type="text" placeholder="Friend Email" name="friend-email" class="input-filed">
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="controls">
+                <input type="submit" value="Gift" class="btn submit-gift">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="border">
+        <div class="arrow clickable"></div>
+      </div>
+    </div>
     <script src="lib/parallax.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="lib/soundcloud.player.api.js"></script>
     <script src="lib/sc-player.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script src="public/script/bootstrap.min.js"></script>
     <script>
       var scene = document.getElementById('scene');
       var parallax = new Parallax(scene);
@@ -39,9 +93,6 @@
           $('ol.sc-trackslist').css('height', Math.min($(window).width()/2-61, 239) + "px");
         }
       );
-      $('.animation-controls').on('click', function () {
-        $('body').toggleClass('paused');
-      });
     </script>
   </body>
 </html>

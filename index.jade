@@ -4,32 +4,67 @@ html(lang="en")
     title Monstercat 015 - Outlook
     link(rel='stylesheet', href='css/outlook.css')
     link(rel='stylesheet', href='css/sc-player-minimal.css')
+    link(rel='stylesheet', type="text/css", href='public/css/font-awesome.min.css')
+    link(rel='stylesheet', type="text/css", href='public/css/bootstrap.min.css')
   body
-    div(id="container", class="container")
+    div(id="container", class="box-container")
       ul(id="scene", class="scene")
         li(class="layer", data-depth="0.00")
           div.stars
         li(class="layer", data-depth="0.20")
-          img.aurora(src="//data.monstercat.com/outlook/aurora.png")
+          img.aurora(src="http://data.monstercat.com/outlook/aurora.png")
         li(class="layer", data-depth="0.40")
-          img.mountains(src="//data.monstercat.com/outlook/mountains.png")
+          img.mountains(src="http://data.monstercat.com/outlook/mountains.png")
         li(class="layer", data-depth="0.60")
-          img.trees(src="//data.monstercat.com/outlook/trees.png")
+          img.trees(src="http://data.monstercat.com/outlook/trees.png")
         li(class="layer", data-depth="0.80")
-          img.grass(src="//data.monstercat.com/outlook/grass.png")
+          img.grass(src="http://data.monstercat.com/outlook/grass.png")
     div.cover-page.fade-in
       div.album-container
-        img.album-name(src="//data.monstercat.com/outlook/album-name.svg")
-        img.album-art(src="//data.monstercat.com/outlook/art.jpg")
+        img.album-name(src="http://data.monstercat.com/outlook/album-name.svg")
+        img.album-art(src="http://data.monstercat.com/outlook/art.jpg")
         div.soundcloud-embed
           div.soundcloud-square
             a.sc-player(href="https://soundcloud.com/monstercat/sets/monstercat-014-discovery")
-        img.available(src="//data.monstercat.com/outlook/avail.svg")
-
+        img.available(src="http://data.monstercat.com/outlook/avail.svg")
+    .side-bar
+        .content-container
+          .content
+            form.form-horizontal.hidden.form.gift-form
+              .control-group
+                .controls
+                  h4 Gift a friend
+              .control-group
+                label.control-label.friend-email(for="friend-email") Friend Email
+                .controls
+                  input#form-email.input-filed(type='text',placeholder='Your Name', name="name")
+              .control-group
+                label.control-label(for="friend-email") Email
+                .controls
+                  input#form-name.input-filed(type='text',placeholder='Email',name='email')
+              .control-group
+                label.control-label(for="friend-email") Itune Receipt No
+                .controls
+                  input#form-name.input-filed(type='text',placeholder='Itune Receipt No',name='receipt-number')
+              .control-group
+                label.control-label(for="friend-email") Friend Name
+                .controls
+                  input#form-name.input-filed(type='text',placeholder='Friend Name',name='friend-name')
+              .control-group
+                label.control-label(for="friend-email") Friend Email
+                .controls
+                  input#friend-email.input-filed(type='text',placeholder='Friend Email',name='friend-email')
+              .control-group
+                .controls
+                  input.btn.submit-gift(type='submit',value='Gift')
+        .border
+          .arrow.clickable
     script(src="lib/parallax.min.js")
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")
     script(src="lib/soundcloud.player.api.js")
     script(src="lib/sc-player.js")
+    script(type='text/javascript', src='index.js')
+    script(src='public/script/bootstrap.min.js')
     script.
       var scene = document.getElementById('scene');
       var parallax = new Parallax(scene);

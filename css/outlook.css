@@ -13,7 +13,7 @@ img {
   display: block;
 }
 
-.container {
+.box-container {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -121,11 +121,6 @@ img {
   animation-name: scrollbg;*/
 }
 
-.paused * {
-  -webkit-animation: none;
-  animation: none;
-}
-
 .cover-page {
   position: absolute;
   top:0;
@@ -204,4 +199,62 @@ img {
   -webkit-animation-delay: 6s;
   -moz-animation-delay: 6s;
   animation-delay: 6s;
+}
+
+.content-container{
+  color: white;
+  float: right;
+  height: 100%;
+  background-color: rgba(34, 34, 34, 1);
+  width: 450px;
+}
+
+.arrow{
+  float: left;
+  width: 60px;
+  height: 100px;
+  background-color: rgba(34, 34, 34, 1);
+  border-radius: 60px 0px 0px 60px;
+  position: relative;
+  top: 45%;
+  border: 2px solid rgb(44, 44, 44);
+  border-right: 0px;
+}
+
+.side-bar{
+  position: absolute;
+  height: 100%;
+  top: 0px;
+  font-family: sans-serif;
+  right:0px;
+}
+
+.side-bar-icon{
+  top: 5%;
+  position: absolute;
+  z-index: 1000;
+  left: 15px;
+  margin: 35px 0px 0px 10px;
+}
+
+.arrow{
+  float: left;
+  width: 60px;
+  height: 100px;
+  background-color: rgba(34, 34, 34, 1);
+  border-radius: 60px 0px 0px 60px;
+  position: relative;
+  top: 45%;
+  border: 2px solid rgb(44, 44, 44);
+  border-right: 0px;
+}
+
+.border{
+  overflow: auto;
+  top: 50%;
+  position: relative;
+}
+
+.gift-form{
+  margin-top: 40%;
 }
