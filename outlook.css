@@ -1,5 +1,6 @@
 body{
   background-color: black;
+  overflow: hidden;
 }
 
 .content-container{
@@ -27,7 +28,7 @@ body{
 	height: 100%;
   top: 0px;
   font-family: sans-serif;
-  right:0px;
+  right: -400px;
 }
 
 .side-bar-icon{
@@ -58,4 +59,10 @@ body{
 
 .gift-form{
   margin-top: 40%;
+}
+
+.icon-gift{
+  margin: 40px 0px 0px 20px;
+  font-size: 32px;
+  color: red;
 }
