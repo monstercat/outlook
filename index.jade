@@ -4,6 +4,21 @@ html(lang="en")
     title Monstercat 015 - Outlook
     link(rel='stylesheet', href='css/outlook.css')
   body
+    div.preload
+      div.loading
+        img.loading-text(src="http://data.monstercat.com/outlook/loading.svg")
+        br
+        img.loading-art(src="http://data.monstercat.com/outlook/art.jpg")
+        .loading-logos
+          img.loading-logo(src="http://data.monstercat.com/outlook/logo.png")
+          img.loading-logo(src="http://data.monstercat.com/outlook/logo.png")
+          img.loading-logo(src="http://data.monstercat.com/outlook/logo.png")
+          img.loading-logo(src="http://data.monstercat.com/outlook/logo.png")
+          img.loading-logo(src="http://data.monstercat.com/outlook/logo.png")
+        br
+      div.skip
+        a(href="https://www.monstercat.com/index.html")
+          span Skip to Monstercat.com
     div(id="container", class="box-container")
       ul(id="scene", class="scene")
         li(class="layer", data-depth="1.00")
@@ -16,13 +31,13 @@ html(lang="en")
           div.trees
         li(class="layer", data-depth="0.20")
           div.grass
-    div.cover-page.fade-in
+    div.cover-page
       div.album-container
         img.album-art(src="http://data.monstercat.com/outlook/art.jpg")
         img.available(src="http://data.monstercat.com/outlook/release.svg")
     div.top-right
       a(href="www.monstercat.com")
-        h4 Continue to Monstercat.com
+        span Continue to Monstercat.com
     .side-bar
       .gift.clickable.arrow
     script(src="lib/parallax.min.js")
@@ -30,3 +45,38 @@ html(lang="en")
     script.
       var scene = document.getElementById('scene');
       var parallax = new Parallax(scene);
+    script.
+      var numLeft = 5;
+      function load(el, url) {
+        var img = $("<img />").attr('src', url).load(function() {
+          if (!this.complete ||
+              typeof this.naturalWidth == "undefined" ||
+              this.naturalWidth == 0) {
+            console.log("Problem loading image");
+          } else {
+            $(el).append(img);
+            numLeft -= 1;
+            $('.loading-logos img:last-child').remove();
+            if (numLeft == 0) {
+              $(".preload").fadeOut(1000);
+              //$(".cover-page").addClass("cover-page-fade");
+              $(".available").addClass("available-fade");
+              $(".side-bar").addClass("side-bar-fade");
+            }
+          }
+        });
+      }
+      if ($(window).width > 1000 || $(window).height() > 1000) {
+        load(".stars", "http://data.monstercat.com/outlook/stars@2x.jpg");
+        load(".aurora", "http://data.monstercat.com/outlook/aurora@2x.png");
+        load(".mountains", "http://data.monstercat.com/outlook/mountains@2x.png");
+        load(".trees", "http://data.monstercat.com/outlook/trees@2x.png");
+        load(".grass", "http://data.monstercat.com/outlook/grass@2x.png");
+      } else {
+        load(".stars", "http://data.monstercat.com/outlook/stars.jpg");
+        load(".aurora", "http://data.monstercat.com/outlook/aurora.png");
+        load(".mountains", "http://data.monstercat.com/outlook/mountains.png");
+        load(".trees", "http://data.monstercat.com/outlook/trees.png");
+        load(".grass", "http://data.monstercat.com/outlook/grass.png");
+      }
+
