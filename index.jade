@@ -6,15 +6,15 @@ html(lang="en")
   body
     div.preload
       div.loading
-        img.loading-text(src="http://data.monstercat.com/outlook/loading.svg")
+        img.loading-text(src="https://s3.amazonaws.com/data.monstercat.com/outlook/loading.svg")
         br
-        img.loading-art(src="http://data.monstercat.com/outlook/art.jpg")
+        img.loading-art(src="https://s3.amazonaws.com/data.monstercat.com/outlook/art.jpg")
         .loading-logos
-          img.loading-logo(src="http://data.monstercat.com/outlook/logo.png")
-          img.loading-logo(src="http://data.monstercat.com/outlook/logo.png")
-          img.loading-logo(src="http://data.monstercat.com/outlook/logo.png")
-          img.loading-logo(src="http://data.monstercat.com/outlook/logo.png")
-          img.loading-logo(src="http://data.monstercat.com/outlook/logo.png")
+          img.loading-logo(src="https://s3.amazonaws.com/data.monstercat.com/outlook/logo.png")
+          img.loading-logo(src="https://s3.amazonaws.com/data.monstercat.com/outlook/logo.png")
+          img.loading-logo(src="https://s3.amazonaws.com/data.monstercat.com/outlook/logo.png")
+          img.loading-logo(src="https://s3.amazonaws.com/data.monstercat.com/outlook/logo.png")
+          img.loading-logo(src="https://s3.amazonaws.com/data.monstercat.com/outlook/logo.png")
         br
       div.skip
         a(href="https://www.monstercat.com/index.html")
@@ -33,10 +33,10 @@ html(lang="en")
           div.grass
     div.cover-page
       div.album-container
-        img.album-art(src="http://data.monstercat.com/outlook/art.jpg")
-        img.available(src="http://data.monstercat.com/outlook/release.svg")
+        img.album-art(src="https://s3.amazonaws.com/data.monstercat.com/outlook/art.jpg")
+        img.available(src="https://s3.amazonaws.com/data.monstercat.com/outlook/release.svg")
     div.top-right
-      a(href="www.monstercat.com")
+      a(href="https://www.monstercat.com/index.html")
         span Continue to Monstercat.com
     .side-bar
       .gift.clickable.arrow
@@ -59,7 +59,6 @@ html(lang="en")
             $('.loading-logos img:last-child').remove();
             if (numLeft == 0) {
               $(".preload").fadeOut(1000);
-              //$(".cover-page").addClass("cover-page-fade");
               $(".available").addClass("available-fade");
               $(".side-bar").addClass("side-bar-fade");
             }
@@ -67,16 +66,16 @@ html(lang="en")
         });
       }
       if ($(window).width > 1000 || $(window).height() > 1000) {
-        load(".stars", "http://data.monstercat.com/outlook/stars@2x.jpg");
-        load(".aurora", "http://data.monstercat.com/outlook/aurora@2x.png");
-        load(".mountains", "http://data.monstercat.com/outlook/mountains@2x.png");
-        load(".trees", "http://data.monstercat.com/outlook/trees@2x.png");
-        load(".grass", "http://data.monstercat.com/outlook/grass@2x.png");
+        load(".stars", "https://s3.amazonaws.com/data.monstercat.com/outlook/stars@2x.jpg");
+        load(".aurora", "https://s3.amazonaws.com/data.monstercat.com/outlook/aurora@2x.png");
+        load(".mountains", "https://s3.amazonaws.com/data.monstercat.com/outlook/mountains@2x.png");
+        load(".trees", "https://s3.amazonaws.com/data.monstercat.com/outlook/trees@2x.png");
+        load(".grass", "https://s3.amazonaws.com/data.monstercat.com/outlook/grass@2x.png");
       } else {
-        load(".stars", "http://data.monstercat.com/outlook/stars.jpg");
-        load(".aurora", "http://data.monstercat.com/outlook/aurora.png");
-        load(".mountains", "http://data.monstercat.com/outlook/mountains.png");
-        load(".trees", "http://data.monstercat.com/outlook/trees.png");
-        load(".grass", "http://data.monstercat.com/outlook/grass.png");
+        load(".stars", "https://s3.amazonaws.com/data.monstercat.com/outlook/stars.jpg");
+        load(".aurora", "https://s3.amazonaws.com/data.monstercat.com/outlook/aurora.png");
+        load(".mountains", "https://s3.amazonaws.com/data.monstercat.com/outlook/mountains.png");
+        load(".trees", "https://s3.amazonaws.com/data.monstercat.com/outlook/trees.png");
+        load(".grass", "https://s3.amazonaws.com/data.monstercat.com/outlook/grass.png");
       }
 
