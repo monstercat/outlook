@@ -68,15 +68,9 @@ a, a:hover, a:visited {
   background-size: 100%;
 }
 
-@media screen and (orientation:portrait) {
-  .mountains, .trees, .grass, .mountains, .cat {
-    bottom: -10%;
-  }
-}
-
 @media screen and (orientation:landscape) and (min-width: 1000px) {
   .mountains, .trees, .grass, .mountains, .cat {
-    bottom: -55%;
+    bottom: -65%;
   }
 }
 
@@ -98,11 +92,11 @@ a, a:hover, a:visited {
     transform: rotateZ(360deg) translate3d(0,10%,0) rotateZ(-360deg); } }
 
 .aurora {
-  min-height: 125%;
+  min-height: 150%;
   width: 150%;
   background: url('http://data.monstercat.com/outlook/aurora.png');
   background-size: 100%;
-  top: -100px;
+  top: -25%;
   z-index: -9;
 }
 
@@ -138,10 +132,24 @@ a, a:hover, a:visited {
 
 .stars {
   width: 200%;
-  min-height: 100%;
+  min-height: 150%;
+  top: -25%;
   z-index: -10;
   background: url('http://data.monstercat.com/outlook/stars.jpg');
   background-size: 100%;
+}
+
+@media screen and (orientation:portrait) {
+  .stars, .aurora {
+    max-width: 300%;
+    width: 300%;
+  }
+
+  .mountains, .trees, .grass, .mountains, .cat {
+    bottom: -45%;
+    max-width: 300%;
+    width: 300%;
+  }
 }
 
 .cover-page {
