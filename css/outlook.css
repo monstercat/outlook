@@ -40,52 +40,63 @@ a, a:hover, a:visited {
   left: -25%;
 }
 
+.grass img, .trees img, .mountains img, .aurora img, .stars img {
+  width: 100%;
+}
+
 .mountains, .trees, .grass, .mountains, .cat {
   bottom: -45%;
 }
 
 .mountains {
+  width: 150%;
+  height: 100%;
   z-index: -8;
 }
 
 .trees {
+  width: 150%;
+  height: 100%;
   z-index: -7;
 }
 
 .grass {
+  width: 150%;
+  height: 80%;
   z-index: -6;
-}
-
-.cat {
-  position: absolute;
-  width: 30%;
-  right: 10%;
-  z-index:-5;
-}
-
-@media screen and (orientation:portrait) {
-  .mountains, .trees, .grass, .mountains, .cat {
-    bottom: -10%;
-  }
 }
 
 @media screen and (orientation:landscape) and (min-width: 1000px) {
   .mountains, .trees, .grass, .mountains, .cat {
-    bottom: -55%;
+    bottom: -65%;
   }
 }
 
 .aurora {
-  min-height: 125%;
-  top: -100px;
+  min-height: 150%;
+  min-width: 150%;
+  top: -25%;
   z-index: -9;
 }
 
 .stars {
   width: 200%;
-  min-height: 100%;
+  min-height: 150%;
+  top: -25%;
   z-index: -10;
-  background: url('http://data.monstercat.com/outlook/stars.jpg');
+}
+
+@media screen and (orientation:portrait) {
+  .stars, .aurora {
+    max-width: 300%;
+    width: 300%;
+  }
+
+  .mountains, .trees, .grass, .mountains, .cat {
+    bottom: -45%;
+    max-width: 300%;
+    width: 300%;
+  }
 }
 
 .cover-page {
@@ -94,6 +105,7 @@ a, a:hover, a:visited {
   left:0;
   width: 100%;
   height: 100%;
+  opacity: 1;
   overflow: hidden;
   z-index: 1;
 }
@@ -117,6 +129,7 @@ a, a:hover, a:visited {
 .album-art {
   float: left;
   width: 50%;
+  margin: 0;
 }
 
 .soundcloud-square {
@@ -130,10 +143,6 @@ a, a:hover, a:visited {
   float: left;
   width: 50%;
   margin: -20px 0 0 0;
-}
-
-.available {
-  width: 100%;
 }
 
 .top-right {
@@ -153,25 +162,11 @@ a, a:hover, a:visited {
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-o-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
-.fade-in {
-  opacity:0;
-  -webkit-animation:fadeIn ease-in 1;
-  -moz-animation:fadeIn ease-in 1;
-  animation:fadeIn ease-in 1;
-
-  -webkit-animation-fill-mode:forwards;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
-
-  -webkit-animation-duration:3s;
-  -moz-animation-duration:3s;
-  animation-duration:3s;
-
-  -webkit-animation-delay: 3s;
-  -moz-animation-delay: 3s;
-  animation-delay: 3s;
+.available {
+  width: 100%;
 }
 
 .content-container{
@@ -196,7 +191,7 @@ a, a:hover, a:visited {
   left: 50%;
   margin: -60px 0 0 -30px;
   position: absolute;
-  background: url('http://data.monstercat.com/outlook/gift.svg');
+  background: url('https://s3.amazonaws.com/data.monstercat.com/outlook/gift.svg');
   background-size: 80%;
   background-position: center;
   background-repeat: no-repeat;
@@ -208,6 +203,10 @@ a, a:hover, a:visited {
   80% { bottom: 20px; }
   100% { bottom:0; } }
 @-moz-keyframes fadeUp {
+  0% { bottom:-100px; }
+  80% { bottom: 20px; }
+  100% { bottom:0; } }
+@-o-keyframes fadeUp {
   0% { bottom:-100px; }
   80% { bottom: 20px; }
   100% { bottom:0; } }
@@ -223,36 +222,113 @@ a, a:hover, a:visited {
   width: 100%;
   font-family: sans-serif;
   z-index: 100000;
+}
+
+.side-bar-fade {
   -webkit-animation:fadeUp ease-in 1;
   -moz-animation:fadeUp ease-in 1;
+  -o-animation:fadeUp ease-in 1;
   animation:fadeUp ease-in 1;
 
   -webkit-animation-fill-mode:forwards;
   -moz-animation-fill-mode:forwards;
+  -o-animation-fill-mode:forwards;
   animation-fill-mode:forwards;
 
   -webkit-animation-duration:0.4s;
   -moz-animation-duration:0.4s;
+  -o-animation-duration:0.4s;
   animation-duration:0.4s;
 
-  -webkit-animation-delay: 8s;
-  -moz-animation-delay: 8s;
-  animation-delay: 8s;
+  -webkit-animation-delay: 6s;
+  -moz-animation-delay: 6s;
+  -o-animation-delay: 6s;
+  animation-delay: 6s;
 }
 
-.border{
-  overflow: auto;
-  top: 50%;
+.preload {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  background-color: #000;
+}
+
+.loading {
+  width: 100%;
+  text-align: center;
   position: relative;
+  margin-top: 2em;
+  z-index: 10;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  color: #FFFFFF;
 }
 
-.icon-gift{
-  margin: 40px 0px 0px 20px;
-  font-size: 32px;
-  color: red;
+.skip {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  margin-top: 2em;
+  z-index: 10;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  color: #FFFFFF;
 }
 
-.side-bar .tooltip-inner{
-  font-size: 18px;
+.loading-logos {
+  width: 500px;
+  min-height: 40px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
+.loading-logo {
+  float: right;
+  width: 100px;
+  max-width: 20%;
+}
+
+@-webkit-keyframes blink {
+  0% { opacity:1; }
+  50% { opacity:0.6; }
+  100% { opacity:1; }}
+@-moz-keyframes blink {
+  0% { opacity:1; }
+  50% { opacity:0.6; }
+  100% { opacity:1; }}
+@-o-keyframes blink {
+  0% { opacity:1; }
+  50% { opacity:0.6; }
+  100% { opacity:1; }}
+@keyframes blink {
+  0% { opacity:1; }
+  50% { opacity:0.6; }
+  100% { opacity:1; }}
+
+.loading-art {
+  display: inline-block;
+  width: 300px;
+  max-width: 80%;
+}
+
+.loading-text {
+  display: inline-block;
+  max-width: 100%;
+  -webkit-animation:blink ease-in-out 1;
+  -moz-animation:blink ease-in-out 1;
+  -o-animation:blink ease-in-out 1;
+  animation:blink ease-in-out 1;
+
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-duration:2s;
+  -moz-animation-duration:2s;
+  -o-animation-duration:2s;
+  animation-duration:2s;
+}
