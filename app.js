@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 mongoose.connect('localhost', 'lookout');
-var kue = require('kue')
+var kue = require('kue');
 jobs = kue.createQueue();
 
 var path = require('path');
@@ -10,10 +10,9 @@ var express = require('express')
   , cors = require('cors')
   , app = express();
 
-var sendGift = function(sender, senderEmail, receivera, receiverEmail){
-  console.log('send email');
+var sendGift = function(sender, senderEmail, receiver, receiverEmail){
   var html = '<div> test email<div>';
-  var to = 'zhangyangxu@gmail.com';
+  var to = receiverEmail;
   var from = 'connect@monstercat.com';
   var subject = 'test email for gift';
   time = 10000;
@@ -40,11 +39,34 @@ var sendGift = function(sender, senderEmail, receivera, receiverEmail){
 }
 
 var validateItuneCode = function(itunesNo, cb){
+
+  //check string lenght
+  if(itunesNo.length != 12){
+    return cb('invalid Itunes number: length');
+  }
+
+  //check if it is all numbers
+  var num = Number(itunesNo);
+  if(!num){
+    return cb('invalid Itunes number: not a number');
+  }
+
+  //check if it is integer
+  var intRegex = /^\d+$/;
+  if(!intRegex.test(num)) {
+    return cb('invalid Itunes number: not a integer');
+  }
+
+  //check for repeating number
+  var repeatingRegex = /\b(\d)\1+\b/;
+  if(repeatingRegex.test(num)){
+    return cb('invalid Itunes number: repeating number')
+  }
+
   Submitter.find({itunesNo: itunesNo}, function(err, docs){
     if(docs.length>0){ 
-      return cb('duplicated itunes number');
-    }
-    else{
+      return cb('duplicated Itunes number');
+    }else{
       return cb(null);
     }
   }); 
@@ -58,14 +80,13 @@ app.configure(function(){
 });
 
 app.post('/gift', function(req, res){
-  console.log('get gift request');
   var name = req.body.name;
   var email = req.body.email;
   var itunesNo = req.body.itunesNo;
   var friendEmail = req.body.friendEmail;
   var friendName = req.body.friendName;
 
-  validateItuneCode(req.body.ituneCode, function(err){
+  validateItuneCode(itunesNo, function(err){
     if(err){
       console.log(err);
       return
@@ -81,7 +102,8 @@ app.post('/gift', function(req, res){
 
     new_submitter.save(function(err, doc){
       console.log('saved user');
-      sendGift(name,email,friendEmail,friendName);
+      sendGift(name,email,friendName,friendEmail);
+      return res
     });
   });
 });

@@ -33,25 +33,25 @@ html(lang="en")
           form.form-horizontal.hidden.form.gift-form#gift-form
             h4.text-center Gift this album to a friend
             .control-group
-              label.control-label.friend-email(for="name") Your Name
+              label.control-label.friend-email(for="form-name") Your Name
               .controls
-                input#form-email.input-field(type='text',placeholder='Name', name="name")
+                input#form-name.input-field(type='text',placeholder='Name', name="name")
             .control-group
-              label.control-label(for="email") Your Email
+              label.control-label(for="form-email") Your Email
               .controls
-                input#form-name.input-field(type='text',placeholder='Email',name='email')
+                input#form-email.input-field(type='text',placeholder='Email',name='email')
             .control-group
-              label.control-label(for="iTunesNo") iTunes Receipt No.
+              label.control-label(for="form-itunesNo") iTunes Receipt No.
               .controls
-                input#form-name.input-field(type='text',placeholder='iTunes Receipt No.',name='iTunesNo')
+                input#form-itunesNo.input-field(type='text',placeholder='iTunes Receipt No.',name='itunesNo') .control-group
             .control-group
-              label.control-label(for="friendName") Friend's Name
+              label.control-label(for="form-friend") Friend's Name
               .controls
-                input#form-name.input-field(type='text',placeholder='Name',name='friendName')
+                input#form-friend.input-field(type='text',placeholder='Name',name='friendName')
             .control-group
-              label.control-label(for="friendEmail") Friend's Email
+              label.control-label(for="form-friendEmail") Friend's Email
               .controls
-                input#friend-email.input-field(type='text',placeholder='Email',name='friendEmail')
+                input#form-friendEmail.input-field(type='text',placeholder='Email',name='friendEmail')
             .control-group
               .controls
                 input.btn.submit-gift(type='submit',value='Gift')

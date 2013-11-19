@@ -5,7 +5,7 @@ $(document).ready(function () {
 
   frm.submit(function (e) {
       console.log('submit form');
-      $('.submit-gift').attr('disabled','disabled');
+      //$('.submit-gift').attr('disabled','disabled');
       e.preventDefault()
 
       $.ajax({
