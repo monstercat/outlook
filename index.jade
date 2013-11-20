@@ -5,6 +5,7 @@ html(lang="en")
     link(rel='stylesheet', href='css/outlook.css')
     link(rel='stylesheet', href='css/sc-player-minimal.css')
     link(rel='stylesheet', type="text/css", href='public/css/font-awesome.min.css')
+    link(rel='stylesheet', type="text/css", href='css/alertify.bootstrap.css')
     link(rel='stylesheet', type="text/css", href='public/css/bootstrap.min.css')
   body
     div.preload
@@ -72,12 +73,15 @@ html(lang="en")
                 input#form-friendEmail.input-field(type='text',placeholder='Email',name='friendEmail')
             .control-group
               .controls
-                input.btn.submit-gift(type='submit',value='Gift')
-      .gift.clickable.arrow#gift-btn
+                input.btn.submit-gift(type='submit',value='Send Gift')
+        .err-section
+          span.err-message show the err
+      .gift.clickable.arrow#gift-btn(data-toggle="tooltip", title="Gift a Friend", data-placement="top")
     script(src="lib/parallax.min.js")
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")
     script(src="lib/soundcloud.player.api.js")
     script(src="lib/sc-player.js")
+    script(src="lib/alertify.min.js")
     script(src='public/script/bootstrap.min.js')
     script(type='text/javascript', src='index.js')
     script.

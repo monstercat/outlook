@@ -332,3 +332,19 @@ a, a:hover, a:visited {
   -o-animation-duration:2s;
   animation-duration:2s;
 }
+
+.side-bar .tooltip-inner{
+  font-size: 16px;
+}
+
+.err-section{
+  display: none;
+  font-size: 15px;
+  text-align: center;
+  color: red;
+}
+
+.red-text::-webkit-input-placeholder {
+  color: red;
+}
+
