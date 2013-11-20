@@ -27,7 +27,7 @@ $(document).ready(function () {
 
       $.ajax({
          type: 'POST',
-         url: 'http://api.monstercat.com/outlook/gift',
+         url: 'http://localhost:4593/outlook/gift',
          data: form_data,
          success: function(data) {
            if(data.err){
