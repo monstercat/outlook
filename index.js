@@ -8,7 +8,7 @@ $(document).ready(function () {
     for(var i =0; i<ids.length; i++){
       var ele = $(ids[i]);
       var v = ele.val();
-      if(!v){ 
+      if(!v){
         $('.err-message').text('Please fill the empty field!');
         $('.err-section').show();
         return false;
@@ -21,9 +21,9 @@ $(document).ready(function () {
     var submit = validate_form();
     e.preventDefault();
 
-    if(submit){  
+    if(submit){
       $('.submit-gift').attr('disabled','disabled');
-      var form_data = frm.serialize();   
+      var form_data = frm.serialize();
 
       $.ajax({
          type: 'POST',
@@ -53,7 +53,7 @@ $(document).ready(function () {
 
   $(".gift").click(function(){
     if(!sideBar_open){
-      $(".side-bar").animate({height:"80%"})
+      $(".side-bar").animate({height:"425px;"})
     }else{
       $(".side-bar").animate({height:"0"})
     }
