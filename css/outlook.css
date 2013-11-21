@@ -198,6 +198,8 @@ a, a:hover, a:visited {
   cursor: pointer;
 }
 
+
+
 @-webkit-keyframes fadeUp {
   0% { bottom:-100px; }
   80% { bottom: 20px; }
@@ -346,5 +348,46 @@ a, a:hover, a:visited {
 
 .red-text::-webkit-input-placeholder {
   color: red;
+}
+
+.sales-link{
+  text-align: center;
+  font-size: 12px;
+  float: left;
+}
+
+.links-group{
+  margin: auto;
+}
+
+.notice{
+  font-size: 11px;
+  text-align: center;
+}
+
+.sc-trackslist{
+  margin: 46px 0px 0px 0px;
+}
+
+.album-container .sc-player ol.sc-trackslist{
+  height:232px;  
+  margin: 46px 0px 0px 0px;
+}
+
+.album-container .sc-player ol, .sc-player li{
+  line-height: 17px;
+}
+
+.link-tag{
+  height: 45px;
+  width: 136px;
+}
+
+.logo-image{
+  margin: auto;
+}
+
+.links-group{
+  display: inline-block;
 }
 

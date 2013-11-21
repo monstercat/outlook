@@ -41,8 +41,18 @@ html(lang="en")
         img.album-art(src="https://s3.amazonaws.com/data.monstercat.com/outlook/art.jpg")
         div.soundcloud-embed
           div.soundcloud-square
-            a.sc-player(href="https://soundcloud.com/monstercat/sets/monstercat-014-discovery")
+            a.sc-player(href="https://soundcloud.com/monstercat/sets/monstercat-015-outlook")
         img.available(src="https://s3.amazonaws.com/data.monstercat.com/outlook/avail.svg")
+        div.links-group
+          div.sales-link
+            a.link-tag(href="http://monster.cat/1dgCwjx",style="color: #08c !important")
+              img.logo-image(src='https://s3.amazonaws.com/data.monstercat.com/outlook/logos_itu.png')
+          div.sales-link
+            a.link-tag(href="http://monster.cat/1jlTuuq",style="color: #08c !important")
+              img.logo-image(src='https://s3.amazonaws.com/data.monstercat.com/outlook/logos_spo.png')
+          div.sales-link
+            a.link-tag(href="http://monster.cat/IfQHqo",style="color: #08c !important")
+              img.logo-image(src='https://s3.amazonaws.com/data.monstercat.com/outlook/logos_ban.png')
     div.top-right
       a(href="https://www.monstercat.com/index.html")
         span Continue to Monstercat.com
@@ -50,7 +60,7 @@ html(lang="en")
       .content-container
         .content
           form.form-horizontal.hidden.form.gift-form#gift-form
-            h4.text-center Gift this album to a friend
+            h4.text-center With your purchase of the album, we will send one of your friends a free copy!
             .control-group
               label.control-label.friend-email(for="form-name") Your Name
               .controls
@@ -62,7 +72,7 @@ html(lang="en")
             .control-group
               label.control-label(for="form-itunesNo") Sales Receipt No.
               .controls
-                input#form-itunesNo.input-field(type='text',placeholder='iTunes Receipt No.',name='itunesNo') .control-group
+                input#form-itunesNo.input-field(type='text',placeholder='Sales Receipt No.',name='itunesNo')
             .control-group
               label.control-label(for="form-friend") Friend's Name
               .controls
@@ -74,9 +84,11 @@ html(lang="en")
             .control-group
               .controls
                 input.btn.submit-gift(type='submit',value='Send Gift')
+        .notice
+          span.notice-message *Gifts are delayed and do not send immediately
         .err-section
           span.err-message show the err
-      .gift.clickable.arrow#gift-btn(data-toggle="tooltip", title="Gift a Friend", data-placement="top")
+      .gift.clickable.arrow#gift-btn(data-toggle="tooltip", title="Give the Gift", data-placement="top")
     script(src="lib/parallax.min.js")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")
     script(src="lib/soundcloud.player.api.js")
@@ -90,7 +102,7 @@ html(lang="en")
     script.
       $(window).resize(
         function () {
-          $('ol.sc-trackslist').css('height', Math.min($(window).width()/2-61, 239) + "px");
+          $('ol.sc-trackslist').css('height', Math.min($(window).width()/2-66, 232) + "px");
         }
       );
       var numLeft = 5;

@@ -1,6 +1,5 @@
 EXCLUDES=--exclude .git \
 				 --exclude logs \
-				 --exclude images \
 				 --exclude model \
 
 build: components index.js css/outlook.css index.html
