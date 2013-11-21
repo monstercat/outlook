@@ -242,10 +242,10 @@ a, a:hover, a:visited {
   -o-animation-duration:0.4s;
   animation-duration:0.4s;
 
-  -webkit-animation-delay: 6s;
-  -moz-animation-delay: 6s;
-  -o-animation-delay: 6s;
-  animation-delay: 6s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  -o-animation-delay: 2s;
+  animation-delay: 2s;
 }
 
 .preload {
