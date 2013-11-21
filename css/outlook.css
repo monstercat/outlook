@@ -220,6 +220,7 @@ a, a:hover, a:visited {
 .side-bar{
   position: absolute;
   height: 0;
+  max-height: 80%;
   bottom: -100px;
   width: 100%;
   font-family: sans-serif;
